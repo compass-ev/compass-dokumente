@@ -1,0 +1,109 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage[left=20mm,top=10mm,bottom=10mm,right=20mm]{geometry}
+
+\setlength\parindent{0pt}
+
+\setitemize[0]{leftmargin=0pt,itemindent=0.25cm}
+
+\def\textfieldwidth{6cm}%
+
+\newcommand*{\uTextField}[3]{%
+  \underline{%
+    \TextField[name=#1,width=#2]{%
+      \baselineskip=10pt%
+    #3}%
+  }%
+}%
+
+\newcommand*{\umakebox}{%
+  \underline{%
+    \makebox[11.3cm]{%
+      \baselineskip=10pt%
+    }%
+  }%
+}%
+
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+\begin{Form}
+
+\begin{center}
+\textbf{\large Antrag auf Mitgliedschaft im \\ Computerverein Passau e.V. }
+\end{center}
+
+Hiermit beantrage ich \\\\
+
+\begin{tabular}{llll}
+  Name$^{\ast}$    & \uTextField{name}{\textfieldwidth}{} & Geburtsdatum$^{\ast}$ & \uTextField{geb}{5.5cm}{} \\\\
+  Strasse$^{\ast}$ & \uTextField{str}{\textfieldwidth}{}  & PLZ/Ort$^{\ast}$ & \uTextField{plz}{5.5cm}{} \\\\
+  Email$^{\ast}$   & \uTextField{mail}{\textfieldwidth}{} & Telefon & \uTextField{tel}{5.5cm}{} \\\\
+\end{tabular}
+
+{\footnotesize $~^{\ast}$ Pflichtfelder} \\
+
+die Mitgliedschaft im Computerverein Passau e.V. als
+
+\begin{itemize}
+  \item[] Privatperson \hfill 30 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
+  \item[] Privatperson (vergünstigt$^{\ast\ast}$) \hfill 15 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
+  \item[] Familie \hfill 45 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
+\end{itemize}
+
+{\footnotesize $~^{\ast\ast}$ Ob ein Vergünstigungsgrund vorliegt, entscheidet der Vorstand.} \\
+
+Der angegebene Mitgliedsbeitrag wird, gemäß der Beitragsordnung, jährlich von den Mitgliedern des Vereins erhoben.\\\\
+
+\vspace{1cm}
+
+Ich erteile hiermit dem Computerverein Passau die Einzugsermächtigung für die Abbuchung des
+angegebenen Mitgliedbeitrages von folgendem Konto: \\\\
+
+\begin{tabular}{llll}
+  Kontoinhaber & \uTextField{inhaber}{\textfieldwidth}{} & Institut & \uTextField{institut}{5.8cm}{} \\\\
+  Kontonummer  & \uTextField{kontonr}{\textfieldwidth}{} & BLZ      & \uTextField{blz}{5.8cm}{} \\\\
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cc}
+  \uTextField{od1}{5cm}{} & \umakebox \\
+Ort, Datum ~ & ~ Unterschrift des Kontoinhabers\\\\
+\end{tabular}
+\end{center}
+
+
+\vspace{1cm}
+
+Ich bestätige hiermit, dass alle gemachten Angaben der Wahrheit entsprechen und
+ich die Satzung des Computerverein Passaus zur Kenntnis genommen habe und
+anerkenne. Mir ist bewusst, dass sich die Mitgliedschaft im Verein automatisch
+um ein Jahr verlängert, sofern kein Grund für die Beendigung der Mitgliedschaft
+vorliegt.  Näheres hierzu entnehme ich §4 Mitglieder der Satzung.
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cc}
+  \uTextField{od2}{5cm}{} & \umakebox \\
+Ort, Datum ~ & ~ Unterschrift (bei Minderjährigen der Erziehungsberechtigte)\\[0pt]% adds space between the two sets of signatures
+\end{tabular}
+\end{center}
+
+
+\end{Form}
+
+\end{document}
