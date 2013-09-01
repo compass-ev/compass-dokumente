@@ -1,23 +1,25 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage{enumitem}
 
-\usepackage[left=20mm,top=10mm,bottom=10mm,right=20mm]{geometry}
+\usepackage[left=20mm,top=05mm,bottom=05mm,right=20mm]{geometry}
 
 \setlength\parindent{0pt}
 
-\setitemize[0]{leftmargin=0pt,itemindent=0.25cm}
+\setitemize[0]{labelwidth=1.5cm,itemindent=1.15cm,leftmargin=1.0cm,align=left}
 
 \def\textfieldwidth{6cm}%
 
 \newcommand*{\uTextField}[3]{%
   \underline{%
-    \TextField[name=#1,width=#2]{%
+    \TextField[name=#1,width=#2,charsize=9pt]{%
       \baselineskip=10pt%
     #3}%
   }%
@@ -25,13 +27,15 @@
 
 \newcommand*{\umakebox}{%
   \underline{%
-    \makebox[11.3cm]{%
+    \makebox[10.0cm]{%
       \baselineskip=10pt%
     }%
   }%
 }%
 
-
+\newcommand*{\ccbox}{%
+  \mbox{\CheckBox[height=0.30cm,width=0.30cm,bordercolor=black]{}}\xspace%
+}%
 
 \begin{document}
 
@@ -40,43 +44,79 @@
 
 \begin{Form}
 
+\begin{minipage}{6cm}
+\includegraphics[width=6cm]{../logos/compass-1920x1080.png}
+\end{minipage}
+%
+\begin{minipage}{11cm}
+\flushright
+\textbf{Computerverein Passau e.V.} \\
+\begin{footnotesize}
+Severin Neumann \\
+Eduard-Hamm-Str. 18 \\
+94036 Passau \\
+\href{mailto:info@computerverein-passau.de}{info@computerverein-passau.de} \\
+\href{http://www.computerverein-passau.de}{www.computerverein-passau.de} \\
+\end{footnotesize}
+\end{minipage}
+
+\vspace{0.8cm}
+
 \begin{center}
-\textbf{\large Antrag auf Mitgliedschaft im \\ Computerverein Passau e.V. }
+\textbf{\Large Antrag auf Mitgliedschaft im \\ Computerverein Passau e.V. }
 \end{center}
 
-Hiermit beantrage ich \\\\
+\vspace{0.5cm}
 
+Hiermit beantrage(n) ich (wir)
+
+\begin{center}
 \begin{tabular}{llll}
   Name$^{\ast}$    & \uTextField{name}{\textfieldwidth}{} & Geburtsdatum & \uTextField{geb}{5.5cm}{} \\\\
   Strasse$^{\ast}$ & \uTextField{str}{\textfieldwidth}{}  & PLZ/Ort$^{\ast}$ & \uTextField{plz}{5.5cm}{} \\\\
-  Email$^{\ast}$   & \uTextField{mail}{\textfieldwidth}{} & Telefon & \uTextField{tel}{5.5cm}{} \\\\
+  Email$^{\ast}$   & \uTextField{mail}{\textfieldwidth}{} & Telefon & \uTextField{tel}{5.5cm}{} \\
 \end{tabular}
-
-{\footnotesize $~^{\ast}$ Pflichtfelder} \\
+\end{center}
 
 die Mitgliedschaft im Computerverein Passau e.V. als
 
 \begin{itemize}
-  \item[] Privatperson \hfill 30 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
-  \item[] Privatperson (vergünstigt$^{\ast\ast}$) \hfill 15 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
-  \item[] Familie \hfill 40 EUR p.a. \CheckBox[height=.3cm,width=.3cm,color=black]{}
+  \item[\ccbox Privatperson](30 EUR p.a.)
+  \item[\ccbox Privatperson, vergünstigt$^{\ast\ast}$](15 EUR p.a.)
+  \item[\ccbox Familie](40 EUR p.a.)
 \end{itemize}
 
-{\footnotesize $~^{\ast\ast}$ Ob ein Vergünstigungsgrund vorliegt, entscheidet der Vorstand.} \\
+Der angegebene Mitgliedsbeitrag wird, gemäß der Beitragsordnung, jährlich von
+den Mitgliedern des Vereins erhoben. Sollten Sie nach dem 30. Juni Ihre
+Mitgliedschaft beantragen, wird für das erste Jahr nur der halbe Beitrag
+erhoben.
 
-Der angegebene Mitgliedsbeitrag wird, gemäß der Beitragsordnung, jährlich von den Mitgliedern des Vereins erhoben.\\\\
+\subsubsection*{Zahlungsmöglichkeiten}
+Die Zahlung des Mitgliesbeitrages erfolgt per
 
-\vspace{1cm}
+\begin{itemize}
+  \item[\ccbox Banküberweisung] rechtzeitig bis zum [Datum] auf folgendes [Konto].
 
-Ich erteile hiermit dem Computerverein Passau die Einzugsermächtigung für die Abbuchung des
-angegebenen Mitgliedbeitrages von folgendem Konto: \\\\
+  \item[\ccbox SEPA Lastschriftmandat:]~
 
-\begin{tabular}{llll}
-  Kontoinhaber & \uTextField{inhaber}{\textfieldwidth}{} & Institut & \uTextField{institut}{5.8cm}{} \\\\
-  Kontonummer  & \uTextField{kontonr}{\textfieldwidth}{} & BLZ      & \uTextField{blz}{5.8cm}{} \\\\
-\end{tabular}
+    Ich ermächtige den Computerverein Passau e.V., Zahlungen von meinem Konto
+    mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an,
+    die vom Computerverein Passau e.V. auf mein Konto gezogenen Lastschriften
+    einzulösen.
 
-\vspace{0.5cm}
+    \medskip
+
+    Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem
+    Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es
+    gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
+
+    \begin{center}
+    \begin{tabular}{llll}
+      Kontoinhaber & \uTextField{inhaber}{5.5cm}{} & Institut & \uTextField{institut}{5.5cm}{} \\\\
+      Kontonummer  & \uTextField{kontonr}{5.5cm}{} & BLZ      & \uTextField{blz}{5.5cm}{} \\\\
+    \end{tabular}
+    \end{center}
+
 
 \begin{center}
 \begin{tabular}{cc}
@@ -84,17 +124,17 @@ angegebenen Mitgliedbeitrages von folgendem Konto: \\\\
 Ort, Datum ~ & ~ Unterschrift des Kontoinhabers\\\\
 \end{tabular}
 \end{center}
+\end{itemize}
 
 
-\vspace{1cm}
-
+\subsubsection*{Einverständniserklärung}
 Ich bestätige hiermit, dass alle gemachten Angaben der Wahrheit entsprechen und
 ich die Satzung des Computerverein Passaus zur Kenntnis genommen habe und
 anerkenne. Mir ist bewusst, dass sich die Mitgliedschaft im Verein automatisch
 um ein Jahr verlängert, sofern kein Grund für die Beendigung der Mitgliedschaft
-vorliegt.  Näheres hierzu entnehme ich §4 Mitglieder der Satzung.
+vorliegt.  Näheres hierzu entnehme ich \textit{§4 Mitglieder} der Satzung. \\
 
-\vspace{0.5cm}
+\medskip
 
 \begin{center}
 \begin{tabular}{cc}
@@ -103,6 +143,10 @@ Ort, Datum ~ & ~ Unterschrift (bei Minderjährigen der Erziehungsberechtigte)\\[
 \end{tabular}
 \end{center}
 
+\vspace{0.8cm}
+
+{\footnotesize $~^{\ast}$ Pflichtfelder} \\
+{\footnotesize $~^{\ast\ast}$ Ob ein Vergünstigungsgrund vorliegt, entscheidet der Vorstand.} \\
 
 \end{Form}
 
