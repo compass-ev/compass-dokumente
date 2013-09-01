@@ -9,7 +9,7 @@
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage{enumitem}
 
-\usepackage[left=20mm,top=05mm,bottom=05mm,right=20mm]{geometry}
+\usepackage[left=20mm,top=10mm,bottom=10mm,right=20mm]{geometry}
 
 \setlength\parindent{0pt}
 
@@ -19,9 +19,10 @@
 
 \newcommand*{\uTextField}[3]{%
   \underline{%
-    \TextField[name=#1,width=#2,charsize=9pt]{%
+    \mbox{\TextField[name=#1,width=#2,charsize=9pt,bordercolor=white]{%
       \baselineskip=10pt%
     #3}%
+    }%
   }%
 }%
 
@@ -33,8 +34,8 @@
   }%
 }%
 
-\newcommand*{\ccbox}{%
-  \mbox{\CheckBox[height=0.30cm,width=0.30cm,bordercolor=black]{}}\xspace%
+\newcommand*{\ccbox}[1]{%
+  \mbox{\CheckBox[name=#1,height=0.30cm,width=0.30cm,bordercolor=black]{~}}\xspace%
 }%
 
 \begin{document}
@@ -45,7 +46,7 @@
 \begin{Form}
 
 \begin{minipage}{6cm}
-\includegraphics[width=6cm]{../logos/compass-1920x1080.png}
+\includegraphics[width=6cm]{../logos/compass-1920x1080.pdf}
 \end{minipage}
 %
 \begin{minipage}{11cm}
@@ -81,9 +82,9 @@ Hiermit beantrage(n) ich (wir)
 die Mitgliedschaft im Computerverein Passau e.V. als
 
 \begin{itemize}
-  \item[\ccbox Privatperson](30 EUR p.a.)
-  \item[\ccbox Privatperson, vergünstigt$^{\ast\ast}$](15 EUR p.a.)
-  \item[\ccbox Familie](40 EUR p.a.)
+  \item[\ccbox{prp} Privatperson](30 EUR p.a.)
+  \item[\ccbox{prpv} Privatperson, vergünstigt$^{\ast\ast}$](15 EUR p.a.)
+  \item[\ccbox{fam} Familie](40 EUR p.a.)
 \end{itemize}
 
 Der angegebene Mitgliedsbeitrag wird, gemäß der Beitragsordnung, jährlich von
@@ -95,9 +96,9 @@ erhoben.
 Die Zahlung des Mitgliesbeitrages erfolgt per
 
 \begin{itemize}
-  \item[\ccbox Banküberweisung] rechtzeitig bis zum [Datum] auf folgendes [Konto].
+  \item[\ccbox{buew} Banküberweisung] rechtzeitig bis zum [Datum] auf folgendes [Konto].
 
-  \item[\ccbox SEPA Lastschriftmandat:]~
+  \item[\ccbox{sepa} SEPA Lastschriftmandat:]~
 
     Ich ermächtige den Computerverein Passau e.V., Zahlungen von meinem Konto
     mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an,
