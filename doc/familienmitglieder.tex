@@ -1,0 +1,108 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+
+\usepackage[left=20mm,top=10mm,bottom=10mm,right=20mm]{geometry}
+
+\setlength\parindent{0pt}
+
+\setitemize[0]{labelwidth=1.5cm,itemindent=1.15cm,leftmargin=1.0cm,align=left}
+
+\def\textfieldwidth{6cm}%
+
+\newcommand*{\uTextField}[3]{%
+  \underline{%
+    \mbox{\TextField[name=#1,width=#2,charsize=9pt,bordercolor=white]{%
+      \baselineskip=10pt%
+    #3}%
+    }%
+  }%
+}%
+
+\newcommand*{\umakebox}{%
+  \underline{%
+    \makebox[10.0cm]{%
+      \baselineskip=10pt%
+    }%
+  }%
+}%
+
+\newcommand*{\ccbox}[1]{%
+  \mbox{\CheckBox[name=#1,height=0.30cm,width=0.30cm,bordercolor=black]{~}}\xspace%
+}%
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+\begin{Form}
+
+\begin{minipage}{6cm}
+\includegraphics[width=6cm]{../logos/compass-1920x1080.pdf}
+\end{minipage}
+%
+\begin{minipage}{11cm}
+\flushright
+\textbf{Computerverein Passau e.V.} \\
+\begin{footnotesize}
+Severin Neumann \\
+Eduard-Hamm-Str. 18 \\
+94036 Passau \\
+\href{mailto:info@computerverein-passau.de}{info@computerverein-passau.de} \\
+\href{http://www.computerverein-passau.de}{www.computerverein-passau.de} \\
+\end{footnotesize}
+\end{minipage}
+
+\vspace{0.6cm}
+
+\begin{center}
+\textbf{\Large Weitere Familienmitglieder im \\ Computerverein Passau e.V. }
+\end{center}
+
+\vspace{0.4cm}
+
+Neben 
+\begin{center}
+\begin{tabular}{llll}
+  Name$^{\ast}$    & \uTextField{name}{\textfieldwidth}{} & Geburtsdatum & \uTextField{geb}{5.5cm}{} \\\\
+\end{tabular}
+\end{center}
+
+sollen die nachfolgend aufgeführten Personen als Familienmitglieder in den Verein aufgenommen werden: \\\\
+\begin{tabular}{lll}
+   \textbf{Name}$^{\ast}$ & \textbf{Geburtsdatum} & \textbf{eMailadresse} \\\\
+   \uTextField{mem01}{\textfieldwidth}{} & \uTextField{geb01}{5.5cm}{} & \uTextField{mail01}{5.5cm}{} \\\\
+   \uTextField{mem02}{\textfieldwidth}{} & \uTextField{geb02}{5.5cm}{} & \uTextField{mail02}{5.5cm}{} \\\\
+   \uTextField{mem03}{\textfieldwidth}{} & \uTextField{geb03}{5.5cm}{} & \uTextField{mail03}{5.5cm}{} \\\\
+   \uTextField{mem04}{\textfieldwidth}{} & \uTextField{geb04}{5.5cm}{} & \uTextField{mail04}{5.5cm}{} \\\\
+   \uTextField{mem05}{\textfieldwidth}{} & \uTextField{geb05}{5.5cm}{} & \uTextField{mail05}{5.5cm}{} \\\\
+   \uTextField{mem06}{\textfieldwidth}{} & \uTextField{geb06}{5.5cm}{} & \uTextField{mail06}{5.5cm}{} \\\\
+   \uTextField{mem07}{\textfieldwidth}{} & \uTextField{geb07}{5.5cm}{} & \uTextField{mail07}{5.5cm}{} \\\\
+\end{tabular}
+
+\vspace{0.8cm}
+
+Einladungen, sowie weiterer Schriftverkehr wird nur einmal an die Anschrift des Antragstellers geschickt.
+
+\vspace{1cm}
+\medskip
+
+\begin{center}
+\begin{tabular}{cc}
+  \uTextField{od2}{5cm}{} & \umakebox \\
+Ort, Datum ~ & ~ Unterschrift (bei Minderjährigen der Erziehungsberechtigte)\\[0pt]% adds space between the two sets of signatures
+\end{tabular}
+\end{center}
+
+{\footnotesize $~^{\ast}$ Pflichtfelder} \\
+\end{Form}
+
+\end{document}
